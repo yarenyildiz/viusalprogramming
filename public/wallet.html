@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cüzdan</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .frame {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        .balance p {
+            color: green; /* Varsayılan olarak yeşil */
+        }
+
+        .balance.decrease p {
+            color: red; /* Azaldığında kırmızı */
+        }
+
+        .transactions li {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .transactions li .time {
+            flex: 1;
+        }
+
+        .transactions li .amount {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="frame">
+        <div class="wallet">
+            <h1>Cüzdan</h1>
+            <div class="balance">
+                <p class="balance-amount">BAKİYE: 517,50 TL</p>
+            </div>
+            <div class="transactions">
+                <h2>Hareketler</h2>
+                <ul>
+                    <li>
+                        <span class="time">11:46</span>
+                        <span class="amount">- 12,50 TL</span>
+                    </li>
+                    <li>
+                        <span class="time">13:30</span>
+                        <span class="amount">- 20,00 TL</span>
+                    </li>
+                    <li>
+                        <span class="time">13:45</span>
+                        <span class="amount">- 10,00 TL</span>
+                    </li>
+                    <li>
+                        <span class="time">15:50</span>
+                        <span class="amount">- 19,25 TL</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="actions">
+                <button>Para Yükle</button>
+                <button>Ödeme Yap</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

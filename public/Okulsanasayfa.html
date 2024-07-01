@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okul Anasayfa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+        .hamburger-menu {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .hamburger-menu div {
+            width: 30px;
+            height: 3px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+        .profile-container {
+            width: 600px;
+            padding: 40px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 30px auto;
+        }
+        .profile-info {
+            margin-top: 30px;
+            text-align: left;
+        }
+        .profile-info p {
+            margin: 10px 0;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu" onclick="toggleSidebar()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="mySidebar">
+        <a href="#" onclick="reloadPage()">Profil</a>
+        <a href="attendance.html">Devamsızlık</a>
+        <a href="entry-exit.html">Giriş/Çıkış Geçmişi</a>
+        <a href="QRcode.html">Giriş/Çıkış (QR)</a>
+        <a href="meal-schedule.html">Yemek Programı</a>
+        <a href="wallet.html">Cüzdan</a>
+        <a href="payment.html">Ödeme</a>
+        <a href="login.html" onclick="logout()">Kapat</a>
+        <a href="settings.html">Ayarlar</a>
+    </div>
+
+    <div class="profile-container">
+        <div class="profile-pic"></div>
+        <div class="profile-info">
+            <p id="firstName">İsim: </p>
+            <p id="lastName">Soy isim: </p>
+            <p id="schoolNumber">Okul Numarası: </p>
+            <p id="phoneNumber">Telefon Numarası: </p>
+        </div>
+    </div>
+
+    <script>
+        const studentProfile = {
+            firstName: "Mehmet",
+            lastName: "Demir",
+            schoolNumber: "12345",
+            phoneNumber: "+90 555 123 4567"
+        };
+
+        document.getElementById('firstName').textContent += studentProfile.firstName;
+        document.getElementById('lastName').textContent += studentProfile.lastName;
+        document.getElementById('schoolNumber').textContent += studentProfile.schoolNumber;
+        document.getElementById('phoneNumber').textContent += studentProfile.phoneNumber;
+
+        function toggleSidebar() {
+            var sidebar = document.getElementById("mySidebar");
+            if (sidebar.style.width === "250px") {
+                sidebar.style.width = "0";
+            } else {
+                sidebar.style.width = "250px";
+            }
+        }
+
+        function logout() {
+            window.location.href = "login.html"; // Redirect to login page on logout
+        }
+
+        function reloadPage() {
+            window.location.reload(); // Reload the current page
+        }
+    </script>
+</body>
+</html>

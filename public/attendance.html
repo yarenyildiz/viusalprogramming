@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devamsızlık Çizelgesi</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+        }
+        .hamburger-menu {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            background-color: #333; /* Optional: adds background color to the hamburger icon */
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .hamburger-menu div {
+            background-color: #fff;
+            height: 3px;
+            width: 100%;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            height: 100vh;
+            overflow-y: auto;
+            position: fixed;
+            left: 0;
+            top: 0;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        .sidebar.active {
+            transform: translateX(0);
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+        .sidebar a:hover {
+            background-color: #555;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            margin-left: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hamburger-menu" onclick="toggleSidebar()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="sidebar" id="mySidebar">
+            <a href="Okulanasayfa.html">Profil</a>
+            <a href="attendance.html">Devamsızlık</a>
+            <a href="entry-exit.html">Giriş/Çıkış Geçmişi</a>
+            <a href="QRcode.html">Giriş/Çıkış (QR)</a>
+            <a href="meal-schedule.html">Yemek Programı</a>
+            <a href="wallet.html">Cüzdan</a>
+            <a href="payment.html">Ödeme</a>
+            <a href="login.html" onclick="logout()">Kapat</a>
+            <a href="settings.html">Ayarlar</a>
+        </div>
+        <div class="content">
+            <h1>Devamsızlık Çizelgesi</h1>
+            <table>
+                <tr>
+                    <th>Hafta</th>
+                    <th>Tarih</th>
+                    <th>Devam Durumu</th>
+                </tr>
+                <tr>
+                    <td>1. Hafta</td>
+                    <td>10/01/2024</td>
+                    <td>Gelmedi</td>
+                </tr>
+                <tr>
+                    <td>2. Hafta</td>
+                    <td>10/01/2024</td>
+                    <td>İzinli</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("mySidebar");
+            if (sidebar.style.transform === 'translateX(0px)') {
+                sidebar.style.transform = 'translateX(-100%)'; // Hide the sidebar
+            } else {
+                sidebar.style.transform = 'translateX(0px)'; // Show the sidebar
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>İdare Giriş Ekranı</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            width: 400px;
+            padding: 40px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .login-container h1 {
+            margin-bottom: 20px;
+            color: #0056b3;
+            font-weight: bold;
+        }
+
+        .login-form label {
+            display: block;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-form .remember-me {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .login-form .remember-me input {
+            margin-right: 10px;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .login-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .login-form .forgot-password {
+            display: block;
+            margin-top: 20px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .login-form .forgot-password:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>İDARE GİRİŞ EKRANI</h1>
+        <form class="login-form">
+            <label for="username">Kullanıcı adı:</label>
+            <input type="text" id="username" name="username">
+            
+            <label for="password">Şifre:</label>
+            <input type="password" id="password" name="password">
+            
+            <div class="remember-me">
+                <input type="checkbox" id="remember-me" name="remember-me">
+                <label for="remember-me">Beni Hatırla</label>
+            </div>
+            
+            <button type="submit">Giriş</button>
+            
+            <a href="#" class="forgot-password">Parolanızı mı unuttunuz?</a>
+        </form>
+    </div>
+</body>
+</html>

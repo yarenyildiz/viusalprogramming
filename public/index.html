@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğrenci Kayıt Ekranı</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .registration-container {
+            width: 100%;
+            max-width: 960px; /* Azami genişlik belirtilir, tam ekran için bu genişlik artırılabilir. */
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .registration-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .registration-form {
+            width: 100%;  
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between; /* Elemanlar arası mesafeyi optimize eder */
+        }
+        .form-group {
+            flex-basis: calc(50% - 10px); /* Her sütun için hesaplama yapılır, -10px boşluk bırakır */
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #e9e9e9;
+        }
+        .button-container {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end; /* Buton sağa hizalanır */
+            margin-top: 20px;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-container">
+        <h1>ÖĞRENCİ KAYIT EKRANI</h1>
+        <form class="registration-form" id="registration-form">
+            <!-- Form grupları ve girdi alanları -->
+            <div class="form-group">
+                <label for="name">Ad- Soyad</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="parent-name">Veli Ad-Soyad</label>
+                <input type="text" id="parent-name" name="parent-name">
+            </div>
+            <div class="form-group">
+                <label for="tc">TC Kimlik Numarası:</label>
+                <input type="text" id="tc" name="tc" inputmode="numeric" maxlength="11" pattern="\d*" title="TC Kimlik Numarası 11 haneli olmalıdır ve sadece sayı içermelidir." placeholder="TC Kimlik Numarasını giriniz">
+            </div>
+            <div class="form-group">
+                <label for="parent-tel">Veli Tel no</label>
+                <input type="text" id="parent-tel" name="parent-tel">
+            </div>
+            <div class="form-group">
+                <label for="dob">Doğum Tarihi</label>
+                <input type="date" id="dob" name="dob">
+            </div>
+            <div class="form-group">
+                <label for="class">Öğrenci Sınıf</label>
+                <select id="class" name="class">
+                    <option value="9">9. Sınıf</option>
+                    <option value="10">10. Sınıf</option>
+                    <option value="11">11. Sınıf</option>
+                    <option value="12">12. Sınıf</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="birthplace">Doğum Yeri</label>
+                <input type="text" id="birthplace" name="birthplace">
+            </div>
+            <div class="form-group">
+                <label for="studentPhoto">Öğrenci Fotoğrafı:</label>
+                <input type="file" id="studentPhoto" name="studentPhoto" accept="image/*">
+            </div>
+            <div class="button-container">
+                <button type="submit">Kaydet</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        // TC kimlik numarası alanınız için ek JavaScript gerekmeden de işlevsellik sağlanabilir
+        // Ancak, kullanıcının yalnızca sayısal değer girmesini sağlamak için aşağıdaki kodu kullanabilirsiniz
+        document.getElementById('tc').addEventListener('input', function(e) {
+            var nonNumericRemoved = this.value.replace(/[^0-9]/g, '');
+            if (nonNumericRemoved.length > 11) {
+                nonNumericRemoved = nonNumericRemoved.substring(0, 11);
+            }
+            this.value = nonNumericRemoved;
+        });
+    </script>
+</body>
+</html>

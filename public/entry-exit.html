@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş/Çıkış Geçmişi</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        .hamburger-menu {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            background-color: #333;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .hamburger-menu div {
+            width: 30px;
+            height: 3px;
+            background-color: #fff;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+        .sidebar {
+            height: 100%;
+            width: 0; /* Sidebar starts as hidden */
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: width 0.5s;
+            padding-top: 60px;
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+        .content {
+            transition: margin-left 0.5s;
+            padding: 20px;
+            margin-left: 0;
+        }
+        .centered-table {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        table {
+            width: 60%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="hamburger-menu" onclick="toggleSidebar()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="sidebar" id="mySidebar">
+        <a href="Okulanasayfa.html">Profil</a>
+        <a href="attendance.html">Devamsızlık</a>
+        <a href="entry-exit.html">Giriş/Çıkış Geçmişi</a>
+        <a href="QRcode.html">Giriş/Çıkış (QR)</a>
+        <a href="meal-schedule.html">Yemek Programı</a>
+        <a href="wallet.html">Cüzdan</a>
+        <a href="payment.html">Ödeme</a>
+        <a href="login.html">Kapat</a>
+        <a href="settings.html">Ayarlar</a>
+    </div>
+    <div class="content">
+        <div class="centered-table">
+            <table>
+                <tr>
+                    <th>Tarih</th>
+                    <th>Giriş Saati</th>
+                    <th>Çıkış Saati</th>
+                    <th>Süre</th>
+                </tr>
+                <tr>
+                    <td>2024-01-10</td>
+                    <td>08:30</td>
+                    <td>17:00</td>
+                    <td>8.5 saat</td>
+                </tr>
+                <tr>
+                    <td>2024-01-11</td>
+                    <td>08:45</td>
+                    <td>17:15</td>
+                    <td>8.5 saat</td>
+                </tr>
+                <!-- More rows can be added here -->
+            </table>
+        </div>
+    </div>
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("mySidebar");
+            sidebar.style.width = sidebar.style.width === '250px' ? '0' : '250px';
+        }
+    </script>
+</body>
+</html>

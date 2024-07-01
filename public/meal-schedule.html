@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Yemek Programı</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            /* Mevcut CSS stil tanımlamaları korunmuştur. */
+    
+            /* Sidebar ve Menü Düğmesi için Ek Stiller */
+            .sidebar {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: #111;
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 60px;
+            }
+    
+            .sidebar a {
+                padding: 10px 15px;
+                text-decoration: none;
+                font-size: 25px;
+                color: white;
+                display: block;
+                transition: 0.3s;
+            }
+    
+            .sidebar a:hover {
+                color: #f1f1f1;
+            }
+    
+            .sidebar .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
+    
+            .openbtn {
+                font-size: 20px;
+                cursor: pointer;
+                background-color: #111;
+                color: white;
+                border: none;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                width: 60px;
+                padding: 10px;
+            }
+    
+            .openbtn:hover {
+                background-color: #444;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Sidebar ekleniyor -->
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a href="Okulanasayfa.html">Profil</a>
+            <a href="attendance.html">Devamsızlık</a>
+            <a href="entry-exit.html">Giriş/Çıkış Geçmişi</a>
+            <a href="QRcode.html">Giriş/Çıkış (QR)</a>
+            <a href="meal-schedule.html">Yemek Programı</a>
+            <a href="wallet.html">Cüzdan</a>
+            <a href="payment.html">Ödeme</a>
+            <a href="login.html">Kapat</a>
+        </div>
+        <button class="openbtn" onclick="openNav()">☰ Menü</button>
+    
+        <!-- Mevcut Yemek Programı içeriği -->
+        <div class="meal-schedule">
+            <!-- Yemek programı tablosu ve içerikleri -->
+        </div>
+    
+        <script>
+            function openNav() {
+                document.getElementById("mySidebar").style.width = "250px";
+            }
+    
+            function closeNav() {
+                document.getElementById("mySidebar").style.width = "0";
+            }
+        </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yemek Programı</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .change-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="meal-schedule">
+        <h1>Yemek Programı</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Gün</th>
+                    <th>Kahvaltı</th>
+                    <th>Öğle Yemeği</th>
+                    <th>Akşam Yemeği</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pazartesi</td>
+                    <td>Peynir, Zeytin, Ekmek</td>
+                    <td>Tavuk, Pilav</td>
+                    <td>Makarna, Salata</td>
+                </tr>
+                <tr>
+                    <td>Salı</td>
+                    <td>Yumurta, Bal, Ekmek</td>
+                    <td>Köfte, Patates</td>
+                    <td>Çorba, Ekmek</td>
+                </tr>
+                <tr>
+                    <td>Çarşamba</td>
+                    <td>Zeytin, Domates, Ekmek</td>
+                    <td>Kuru Fasulye, Pilav</td>
+                    <td>Sebzeli Tavuk, Pilav</td>
+                </tr>
+                <tr>
+                    <td>Perşembe</td>
+                    <td>Reçel, Bal, Ekmek</td>
+                    <td>Makarna, Salata</td>
+                    <td>Köfte, Patates</td>
+                </tr>
+                <tr>
+                    <td>Cuma</td>
+                    <td>Yumurta, Peynir, Ekmek</td>
+                    <td>Çorba, Ekmek</td>
+                    <td>Sebzeli Tavuk, Pilav</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="change-button">Değiştir</button>
+    </div>
+</body>
+</html>

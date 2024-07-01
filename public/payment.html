@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödeme Yap</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .payment {
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .payment h1 {
+            text-align: center;
+        }
+
+        .payment form label {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment">
+        <h1>Ödeme Yap</h1>
+        <form>
+            <label for="amount">Ödenecek Tutar</label>
+            <input type="text" id="amount" name="amount">
+            
+            <label for="card-number">Kart Numarası</label>
+            <input type="text" id="card-number" name="card-number">
+            
+            <label for="expiry-date">Son Kullanma Tarihi</label>
+            <input type="text" id="expiry-date" name="expiry-date">
+            
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv">
+            
+            <button type="submit">Ödeme Yap</button>
+        </form>
+    </div>
+</body>
+</html>
