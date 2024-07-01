@@ -3,21 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanıcı Giriş Ekranı</title>
     <link rel="stylesheet" href="styles.css">
-    <title>İdare Giriş Ekranı</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #333;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .login-container {
+        .login-container, .login-form {
             width: 400px;
             padding: 40px;
             background-color: #fff;
@@ -25,12 +14,9 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
-        }
-
-        .login-container h1 {
-            margin-bottom: 20px;
-            color: #0056b3;
-            font-weight: bold;
+            position: relative;
+            margin: 0 auto; /* Center the form */
+            margin-top: 10%;
         }
 
         .login-form label {
@@ -48,13 +34,9 @@
         }
 
         .login-form .remember-me {
-            display: flex;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        .login-form .remember-me input {
             margin-right: 10px;
+            width: 20px !important;
+            margin-top: 22px;
         }
 
         .login-form button {
@@ -68,41 +50,53 @@
             margin-top: 20px;
         }
 
-        .login-form button:hover {
-            background-color: #0056b3;
-        }
-
-        .login-form .forgot-password {
+        .login-form a, .login-form .forgot-password {
             display: block;
             margin-top: 20px;
-            color: #333;
             text-decoration: none;
+            color: #007BFF;
         }
 
-        .login-form .forgot-password:hover {
-            text-decoration: underline;
+        .actions {
+            display: flex;
         }
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <h1>İDARE GİRİŞ EKRANI</h1>
-        <form class="login-form">
+    <div class="login-form">
+        <h1>Giriş</h1>
+        <form id="loginForm">
             <label for="username">Kullanıcı adı:</label>
             <input type="text" id="username" name="username">
             
             <label for="password">Şifre:</label>
             <input type="password" id="password" name="password">
             
-            <div class="remember-me">
-                <input type="checkbox" id="remember-me" name="remember-me">
+            <div class="actions">
+                <input type="checkbox" class="remember-me" id="remember-me" name="remember-me">
                 <label for="remember-me">Beni Hatırla</label>
             </div>
             
-            <button type="submit">Giriş</button>
-            
-            <a href="#" class="forgot-password">Parolanızı mı unuttunuz?</a>
+            <button type="submit">Sisteme Giriş</button>
         </form>
+        <!-- QR Kod sayfasına yönlendirme için link -->
+        <a href="QRcode.html" class="secondary-button">Okula Giriş Yap</a>
+        <a href="#">Şifremi Unuttum</a>
     </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Formun normal submit işlemini engelle
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Kullanıcı adı ve şifre kontrolü
+            if (username === "admin123" && password === "admin123") {
+                window.location.href = 'Anasayfayonetim'; // Yönetici sayfasına yönlendir
+            } else {
+                alert('Yanlış kullanıcı adı veya şifre!');
+            }
+        });
+    </script>
 </body>
 </html>

@@ -12,6 +12,44 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            font-family: Arial, sans-serif;
+        }   
+
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #242424;
+            background-image: linear-gradient(315deg, #242424 0%, #484848 74%);
+            overflow-x: hidden;
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+            color: #f1f1f1;
+        }
+
+        .sidebar .logo {
+            margin: 0;
+            padding: 20px 15px;
+            background: none;
+            font-size: 24px;
+            text-align: center;
+            color: #fff;
         }
 
         .frame {
@@ -44,6 +82,17 @@
 </head>
 <body>
     <div class="frame">
+        <div id="mySidebar" class="sidebar">
+            <a href="Okulsanasayfa.html">Profil</a>
+            <a href="attendance.html">Devamsızlık</a>
+            <a href="entry-exit.html">Giriş/Çıkış Geçmişi</a>
+            <a href="QRcode.html">Giriş/Çıkış (QR)</a>
+            <a href="meal-schedule.html">Yemek Programı</a>
+            <a href="wallet.html">Cüzdan</a>
+            <a href="payment.html">Ödeme</a>
+            <!-- <a href="settings.html">Ayarlar</a> -->
+            <a href="login.html">Çıkış Yap</a>
+        </div>
         <div class="wallet">
             <h1>Cüzdan</h1>
             <div class="balance">

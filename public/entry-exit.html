@@ -12,51 +12,43 @@
             font-family: Arial, sans-serif;
             overflow-x: hidden;
         }
-        .hamburger-menu {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            cursor: pointer;
-            z-index: 1001;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            width: 30px;
-            height: 30px;
-            background-color: #333;
-            padding: 5px;
-            border-radius: 5px;
-        }
-        .hamburger-menu div {
-            width: 30px;
-            height: 3px;
-            background-color: #fff;
-            margin: 6px 0;
-            transition: 0.4s;
-        }
         .sidebar {
-            height: 100%;
-            width: 0; /* Sidebar starts as hidden */
+            height: 100vh;
+            width: 250px;
             position: fixed;
-            z-index: 999;
+            z-index: 1;
             top: 0;
             left: 0;
-            background-color: #111;
+            background-color: #242424;
+            background-image: linear-gradient(315deg, #242424 0%, #484848 74%);
             overflow-x: hidden;
-            transition: width 0.5s;
-            padding-top: 60px;
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.5);
         }
+
         .sidebar a {
             padding: 10px 15px;
             text-decoration: none;
-            font-size: 25px;
+            font-size: 18px;
             color: white;
             display: block;
             transition: 0.3s;
         }
+
         .sidebar a:hover {
+            background-color: #575757;
             color: #f1f1f1;
         }
+
+        .sidebar .logo {
+            margin: 0;
+            padding: 20px 15px;
+            background: none;
+            font-size: 24px;
+            text-align: center;
+            color: #fff;
+        }
+
         .content {
             transition: margin-left 0.5s;
             padding: 20px;
@@ -83,21 +75,16 @@
     </style>
 </head>
 <body>
-    <div class="hamburger-menu" onclick="toggleSidebar()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
     <div class="sidebar" id="mySidebar">
-        <a href="Okulanasayfa.html">Profil</a>
+        <a href="Okulsanasayfa.html">Profil</a>
         <a href="attendance.html">Devamsızlık</a>
         <a href="entry-exit.html">Giriş/Çıkış Geçmişi</a>
         <a href="QRcode.html">Giriş/Çıkış (QR)</a>
         <a href="meal-schedule.html">Yemek Programı</a>
         <a href="wallet.html">Cüzdan</a>
         <a href="payment.html">Ödeme</a>
-        <a href="login.html">Kapat</a>
-        <a href="settings.html">Ayarlar</a>
+        <!-- <a href="settings.html">Ayarlar</a> -->
+        <a href="login.html">Çıkış Yap</a>
     </div>
     <div class="content">
         <div class="centered-table">
@@ -125,10 +112,7 @@
         </div>
     </div>
     <script>
-        function toggleSidebar() {
-            var sidebar = document.getElementById("mySidebar");
-            sidebar.style.width = sidebar.style.width === '250px' ? '0' : '250px';
-        }
+       
     </script>
 </body>
 </html>
